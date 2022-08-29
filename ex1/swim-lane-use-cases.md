@@ -10,6 +10,7 @@ title Register new devices
 |#1ba1e2|m1|Devices Entities Manager
 |#fa6800|e1|Devices Entities Engine
 |#60a917|a1|Connected Devices Accessor
+|#647687|u1|Device Connector
 
 |m1|
 start
@@ -17,6 +18,11 @@ start
     |e1|
     :Set required params
     and call devices accessor;
+    |a1|
+    :Send connection 
+    request to device;
+    |u1|
+    :Send request to actual hardware;
     |a1|
     :Add new device to DB;
     |m1|
@@ -35,6 +41,7 @@ title Update device properties / state
 |#1ba1e2|m1|Device State Manager
 |#fa6800|e1|Device State Engine
 |#60a917|a1|Device State Accessor
+|#647687|u1|Device Connector
 
 |m1|
 start
@@ -44,6 +51,11 @@ start
     and call device state accessor;
     |a1|
     :Set required device state;
+    |u1|
+    :Convert and send desired state 
+    to actual hardware;
+    |a1|
+    :Updated state;
     |m1|
     :Props of the updated device;
 stop
